@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đặt Lịch Chụp - Thợ Chụp Hình</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>Đặt Lịch Chụp</h1>
+        <p>Điền thông tin để đặt lịch chụp cho bạn</p>
+    </header>
+
+    <!-- Menu điều hướng -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Giới Thiệu</a></li>
+            <li><a href="#gallery">Mẫu Ảnh</a></li>
+            <li><a href="#pricing">Bảng Giá</a></li>
+            <li><a href="booking.html">Đặt Lịch</a></li>
+        </ul>
+    </nav>
+
+    <!-- Form Đặt lịch -->
+    <section id="booking-form-section">
+        <form id="booking-form">
+            <label for="name">Tên của bạn:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="date">Ngày chụp:</label>
+            <input type="date" id="date" name="date" required>
+            <label for="service">Chọn dịch vụ:</label>
+            <select id="service" name="service">
+                <option value="portrait">Chụp chân dung</option>
+                <option value="family">Chụp ảnh gia đình</option>
+                <option value="event">Chụp ảnh sự kiện</option>
+            </select>
+            <button type="submit">Đặt lịch</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Thợ Chụp Hình | All Rights Reserved</p>
+    </footer>
+
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>
+        (function () {
+            emailjs.init("8ObQc1Kwsm6P1qx_f");
+        })();
+    </script>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

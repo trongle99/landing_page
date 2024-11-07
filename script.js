@@ -1,33 +1,32 @@
-// Mở form đặt lịch chụp
-function openBookingForm() {
-    document.getElementById("bookingForm").style.display = "flex";
+// Slideshow tự động chuyển đổi hình ảnh
+let currentSlide = 0;
+const slides = document.querySelectorAll('.slide');
+
+function showSlide() {
+    slides.forEach((slide, index) => {
+        slide.style.display = index === currentSlide ? 'block' : 'none';
+    });
+    currentSlide = (currentSlide + 1) % slides.length;
 }
 
-// Đóng form đặt lịch chụp
-function closeBookingForm() {
-    document.getElementById("bookingForm").style.display = "none";
-}
+setInterval(showSlide, 3000); // Chuyển đổi hình ảnh sau mỗi 3 giây
 
-// Thêm Event Listener vào form để gửi email qua EmailJS
-document.getElementById("booking-form").addEventListener("submit", function (event) {
+// Xử lý gửi email với EmailJS
+document.getElementById("booking-form")?.addEventListener("submit", function (event) {
     event.preventDefault();
 
-    // Lấy dữ liệu từ form
     const name = document.getElementById("name").value;
     const date = document.getElementById("date").value;
     const service = document.getElementById("service").value;
 
-    var templateParams = {
-        name: 'James',
-        notes: 'Check this out!',
-    };
-
-
-    // Gửi email qua EmailJS
-    emailjs.send("service_fefrfwr", "template_gkdpf1h", templateParams)
+    emailjs.send("service_fefrfwr", "template_gkdpf1h", {
+        to_name: name,
+        booking_date: date,
+        service_type: service
+    })
         .then((response) => {
             alert("Đặt lịch thành công! Cảm ơn bạn đã đặt lịch.");
-            closeBookingForm();
+            document.getElementById("booking-form").reset();
         })
         .catch((error) => {
             alert("Gửi email thất bại. Vui lòng thử lại sau.");

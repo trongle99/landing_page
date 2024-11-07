@@ -6,17 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thợ Chụp Hình - Giới thiệu công việc</title>
     <link rel="stylesheet" href="style.css">
-
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
-    </script>
-    <script type="text/javascript">
-        (function () {
-            emailjs.init({
-                publicKey: '8ObQc1Kwsm6P1qx_f',
-            });
-        })();
-    </script>
-
 </head>
 
 <body>
@@ -24,27 +13,36 @@
     <!-- Header -->
     <header>
         <h1>Thợ Chụp Hình</h1>
-        <p>Chúng tôi giúp bạn lưu giữ khoảnh khắc đẹp nhất</p>
+        <p>Giúp bạn lưu giữ khoảnh khắc tuyệt vời nhất</p>
     </header>
 
-    <!-- Giới thiệu -->
+    <!-- Menu điều hướng -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Giới Thiệu</a></li>
+            <li><a href="#gallery">Mẫu Ảnh</a></li>
+            <li><a href="#pricing">Bảng Giá</a></li>
+            <li><a href="booking.html">Đặt Lịch</a></li>
+        </ul>
+    </nav>
+
+    <!-- Giới thiệu công việc -->
     <section id="about">
         <h2>Giới Thiệu Công Việc</h2>
-        <p>Tôi là một thợ chụp hình chuyên nghiệp, luôn sẵn sàng giúp khách hàng lưu lại những khoảnh khắc đặc biệt
-            nhất. Với kinh nghiệm và trang thiết bị hiện đại, tôi tự tin sẽ mang đến chất lượng ảnh cao nhất cho bạn.
-        </p>
+        <p>Tôi là một thợ chụp hình chuyên nghiệp, luôn sẵn sàng giúp bạn lưu lại những khoảnh khắc đáng nhớ nhất. Với
+            phong cách hiện đại và trang thiết bị tiên tiến, tôi cam kết mang đến chất lượng cao nhất.</p>
     </section>
 
-    <!-- Mẫu ảnh -->
+    <!-- Gallery tự động chuyển đổi hình ảnh -->
     <section id="gallery">
         <h2>Mẫu Ảnh</h2>
-        <div class="gallery">
-            <img src="https://images.unsplash.com/photo-1484406566174-9da000fda645?q=80&w=1978&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt="Ảnh mẫu 1">
-            <img src="https://images.unsplash.com/44/MIbCzcvxQdahamZSNQ26_12082014-IMG_3526.jpg?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt="Ảnh mẫu 2">
-            <img src="https://images.unsplash.com/photo-1486365227551-f3f90034a57c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt="Ảnh mẫu 3">
+        <div class="slideshow">
+            <img src="https://images.unsplash.com/photo-1730829807497-9c5b8c9c41c4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Ảnh mẫu 1" class="slide" />
+            <img src="https://images.unsplash.com/photo-1730774487035-05673e0c5747?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Ảnh mẫu 2" class="slide" style="display:none;" />
+            <img src="https://images.unsplash.com/photo-1729710221382-ee37d2305ff1?q=80&w=2128&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Ảnh mẫu 3" class="slide" style="display:none;" />
         </div>
     </section>
 
@@ -71,30 +69,10 @@
         </table>
     </section>
 
-    <!-- Đặt lịch chụp -->
-    <section id="booking">
-        <h2>Đặt Lịch Chụp</h2>
-        <button onclick="openBookingForm()">Đặt lịch ngay</button>
-        <div id="bookingForm" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="closeBookingForm()">&times;</span>
-                <h3>Đặt Lịch Chụp</h3>
-                <form id="booking-form">
-                    <label for="name">Tên của bạn:</label>
-                    <input type="text" id="name" name="name" required>
-                    <label for="date">Ngày chụp:</label>
-                    <input type="date" id="date" name="date" required>
-                    <label for="service">Chọn dịch vụ:</label>
-                    <select id="service" name="service">
-                        <option value="portrait">Chụp chân dung</option>
-                        <option value="family">Chụp ảnh gia đình</option>
-                        <option value="event">Chụp ảnh sự kiện</option>
-                    </select>
-                    <button type="submit">Đặt lịch</button>
-                </form>
-            </div>
-        </div>
-    </section>
+    <!-- Footer cố định -->
+    <footer>
+        <p>&copy; 2024 Thợ Chụp Hình | All Rights Reserved</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>
