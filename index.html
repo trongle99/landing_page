@@ -817,7 +817,7 @@
             const formData = {
                 name: document.getElementById("name").value,
                 email: document.getElementById("phone").value,
-                service: document.getElementById("service").value,
+                service: document.getElementById("service").options[document.getElementById("service").selectedIndex].text,
                 date: document.getElementById("date").value
             };
             sendBookingEmail(formData);
